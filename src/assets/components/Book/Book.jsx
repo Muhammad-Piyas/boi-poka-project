@@ -1,3 +1,4 @@
+import { key } from "localforage";
 import { Link } from "react-router-dom";
 
 const Book = ({ book }) => {
@@ -10,8 +11,11 @@ const Book = ({ book }) => {
         </figure>
         <div className="card-body">
           <div className="space-x-4">
-            {tags.map((tag) => (
-              <button className="btn border-none hover:text-green-700 text-green-600 btn-xs hover:bg-green-200 bg-green-100">
+            {tags.map((tag, index) => (
+              <button
+                key={index}
+                className="btn border-none hover:text-green-700 text-green-600 btn-xs hover:bg-green-200 bg-green-100"
+              >
                 {tag}
               </button>
             ))}
